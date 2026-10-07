@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="{{ .Site.Params.description }}">
-    <title>{{ if and .Title (ne .Title "Home") }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
+    <title>{{ if not .IsHome }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
     <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
     {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .RelPermalink }}">{{ end }}
   </head>
