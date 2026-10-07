@@ -1,0 +1,16 @@
+{{ define "main" }}
+  {{ $pages := where .Site.RegularPages "Section" "posts" }}
+  {{ $paginator := .Paginate $pages }}
+  {{ range $paginator.Pages }}
+    <article class="justify">
+      <div class="mb2">
+        <h2 class="m0"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <time class="grayish" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      </div>
+      {{ with .Params.photo }}<img src="{{ strings.TrimPrefix "/" . | relURL }}" alt="{{ $.Title }}">{{ end }}
+      {{ if not .Params.photo }}<p>{{ .Summary | plainify | truncate 240 }}</p>{{ end }}
+    </article>
+    <hr class="half-width">
+  {{ end }}
+  {{ partial "pagination.html" . }}
+{{ end }}

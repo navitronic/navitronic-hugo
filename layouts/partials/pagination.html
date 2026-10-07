@@ -1,0 +1,6 @@
+{{ with .Paginator }}
+  <footer class="py4">
+    {{ if .HasNext }}<a class="h2" href="{{ .Next.URL }}" aria-label="Older posts">&larr;</a>{{ else }}<span class="h2">&larr;</span>{{ end }}
+    {{ if .HasPrev }}<a class="h2" href="{{ .Prev.URL }}" aria-label="Newer posts">&rarr;</a>{{ else }}<span class="h2">&rarr;</span>{{ end }}
+  </footer>
+{{ end }}

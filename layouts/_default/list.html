@@ -1,0 +1,9 @@
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+  {{ range .Pages }}
+    <article>
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <time class="grayish" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+    </article>
+  {{ end }}
+{{ end }}

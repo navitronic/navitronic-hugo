@@ -1,0 +1,22 @@
+baseURL = "https://navitronic.github.io/navitronic-hugo/"
+locale = "en-us"
+title = "navitronic"
+summaryLength = 40
+
+[pagination]
+  pagerSize = 12
+
+[permalinks]
+  posts = "/:year/:month/:slug/"
+
+[params]
+  description = "stuff and nonsense"
+
+[outputFormats.RSS]
+  baseName = "feed"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  style = "github"

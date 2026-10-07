@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ .Site.Params.description }}">
+    <title>{{ if and .Title (ne .Title "Home") }}{{ .Title }} · {{ end }}{{ .Site.Title }}</title>
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .RelPermalink }}">{{ end }}
+  </head>
+  <body class="navy bg-white">
+    <header class="mt4 mb3 ml4 mr1 sm-ml2">
+      <h1 class="mb1" role="banner"><a href="{{ "" | relURL }}">{{ .Site.Title }}</a></h1>
+      <nav class="mxn1" aria-label="Main navigation">
+        <a class="btn button-narrow h3" href="{{ "about/" | relURL }}">About</a>
+      </nav>
+    </header>
+    <main class="container px4 sm-px2" role="main">
+      {{ block "main" . }}{{ end }}
+    </main>
+  </body>
+</html>

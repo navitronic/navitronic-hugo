@@ -1,0 +1,4 @@
+<footer class="py4">
+  {{ with .PrevInSection }}<a class="h2" href="{{ .RelPermalink }}" aria-label="Previous post">&larr;</a>{{ else }}<span class="h2">&larr;</span>{{ end }}
+  {{ with .NextInSection }}<a class="h2" href="{{ .RelPermalink }}" aria-label="Next post">&rarr;</a>{{ else }}<span class="h2">&rarr;</span>{{ end }}
+</footer>
